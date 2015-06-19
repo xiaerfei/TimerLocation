@@ -53,9 +53,28 @@
             // When an app is relaunched because of a location update, the launch options dictionary passed to your "application:willFinishLaunchingWithOptions: "or "application:didFinishLaunchingWithOptions: "method contains the "UIApplicationLaunchOptionsLocationKey" key
             TimerLocation *timerLocation = [TimerLocation shareInstance];
             timerLocation.isAfterResume  = YES;
+            timerLocation.appstate = @"UIApplicationLaunchOptionsLocationKey";
             timerLocation.shouldStartMonitoringSignificantLocation = YES;
-            timerLocation.loactionManager = nil;
             [timerLocation configTimerAndLocation];
+            NSDictionary *dic = @{[timerLocation getCurrentTime]:@"UIApplicationLaunchOptionsLocationKey"};
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+            NSString *docPath = [paths lastObject];
+            NSString *path = [docPath stringByAppendingPathComponent:@"backgrond.plist"];
+            
+            NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithContentsOfFile:path];
+            if (!mutableDict) {
+                mutableDict = [[NSMutableDictionary alloc] init];
+            }
+            [mutableDict addEntriesFromDictionary:dic];
+            NSLog(@"%@",path);
+            
+            BOOL ret = [mutableDict writeToFile:path atomically:NO];
+            if (ret) {
+                NSLog(@"写成功");
+            } else {
+                NSLog(@"写失败");
+            }
+
         }
     }
 
@@ -68,7 +87,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     TimerLocation *timerLocation = [TimerLocation shareInstance];
-    [timerLocation stopLocation];
+    timerLocation.appstate = @"applicationDidEnterBackground";
     timerLocation.shouldStartMonitoringSignificantLocation = YES;
     timerLocation.loactionManager = nil;
     [timerLocation configTimerAndLocation];
@@ -83,8 +102,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     TimerLocation *timerLocation = [TimerLocation shareInstance];
+    [timerLocation.loactionManager stopMonitoringSignificantLocationChanges];
     timerLocation.shouldStartMonitoringSignificantLocation = NO;
-    timerLocation.loactionManager = nil;
+    timerLocation.appstate = @"applicationDidBecomeActive";
     [timerLocation configTimerAndLocation];
 
     NSLog(@"applicationDidBecomeActive");
@@ -98,6 +118,8 @@
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     TimerLocation *timerLocation = [TimerLocation shareInstance];
+    timerLocation.isBackgroundFetch = YES;
+    timerLocation.appstate = @"UIBackgroundFetchResultNewData";
     [timerLocation configTimerAndLocation];
     [timerLocation setBackgroundFetch:^{
         NSLog(@"结束----->UIBackgroundFetchResultNewData");

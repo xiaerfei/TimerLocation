@@ -27,6 +27,10 @@
 @property (nonatomic,assign) NSInteger timerInterval;
 /// app 是否被kill
 @property (nonatomic,assign) BOOL isAfterResume;
+
+@property (nonatomic,assign) BOOL isBackgroundFetch;
+
+@property (nonatomic,copy) NSString *appstate;
 /// background fetch 回调
 @property (nonatomic,copy) void (^backgroundFetch)();
 
@@ -45,5 +49,7 @@
 - (void)startLocation;
 
 - (void)stopLocation;
+
+- (NSString *)getCurrentTime;
 
 @end

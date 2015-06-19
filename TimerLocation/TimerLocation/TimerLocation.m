@@ -168,13 +168,15 @@
         [_delegate timerLocation:self location:coordinate];
     }
     
-    BOOL timeRet = [self systemTime];
+//    BOOL timeRet = [self systemTime];
     // TODO: 是否在工作时间内
-    if (timeRet) {
+    if (1) {
         // TODO: 上传数据
         NSDictionary *dic = @{[self getCurrentTime]:@{@"longitude":@(coordinate.longitude),
                                                       @"latitude":@(coordinate.latitude),
-                                                      @"isAfterResume":_isAfterResume?@"YES":@"NO"}};
+                                                      @"isAfterResume":@(_isAfterResume),
+                                                      @"isBackgroundFetch":@(_isBackgroundFetch),
+                                                      @"appstate":_appstate}};
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *docPath = [paths lastObject];
         NSString *path = [docPath stringByAppendingPathComponent:@"loc.plist"];
