@@ -125,6 +125,8 @@
 - (void)startLocation
 {
     if (_shouldStartMonitoringSignificantLocation) {
+        _loactionManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        _loactionManager.activityType = CLActivityTypeOtherNavigation;
         [_loactionManager startMonitoringSignificantLocationChanges];
     } else {
         [_loactionManager startUpdatingLocation];

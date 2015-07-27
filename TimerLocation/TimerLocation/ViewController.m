@@ -19,8 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    TimerLocation *timerLocation = [TimerLocation shareInstance];
-//    [timerLocation configTimerAndLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,13 +27,8 @@
 }
 
 - (IBAction)startLocation:(id)sender {
-    TimerLocation *timerLocation = [TimerLocation shareInstance];
-    [timerLocation startLocation];
-    
 }
 
 - (IBAction)stopLocation:(id)sender {
-    TimerLocation *timerLocation = [TimerLocation shareInstance];
-    [timerLocation stopLocation];
 }
 @end
