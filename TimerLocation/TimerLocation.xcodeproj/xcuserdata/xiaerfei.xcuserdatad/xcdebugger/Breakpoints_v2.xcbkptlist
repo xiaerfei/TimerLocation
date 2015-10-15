@@ -10,7 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+<<<<<<< HEAD
             timestampString = "456550367.814447"
+=======
+            timestampString = "456402139.261772"
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -26,7 +30,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+<<<<<<< HEAD
             timestampString = "456550367.814447"
+=======
+            timestampString = "456402139.261772"
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -42,7 +50,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+<<<<<<< HEAD
             timestampString = "456550367.814447"
+=======
+            timestampString = "456402139.261772"
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -58,7 +70,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+<<<<<<< HEAD
             timestampString = "456550367.814447"
+=======
+            timestampString = "456402139.261772"
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
@@ -74,7 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+<<<<<<< HEAD
             timestampString = "456550367.814447"
+=======
+            timestampString = "456402139.261772"
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -90,6 +110,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+<<<<<<< HEAD
             timestampString = "456550367.814447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -138,6 +159,8 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimerLocation/TimerLocation.m"
+=======
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
             timestampString = "456393869.687886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

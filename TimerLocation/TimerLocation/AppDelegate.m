@@ -91,7 +91,6 @@
     timerLocation.shouldStartMonitoringSignificantLocation = YES;
     timerLocation.loactionManager = nil;
     [timerLocation configTimerAndLocation];
-
     NSLog(@"applicationDidEnterBackground");
 }
 

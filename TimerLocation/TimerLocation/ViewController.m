@@ -19,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     _stingArray = [[NSMutableString alloc] init];
+=======
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
 
 - (IBAction)stopLocation:(id)sender {
     [_stingArray deleteCharactersInRange:NSMakeRange(0,_stingArray.length)];
@@ -40,5 +44,11 @@
         [_stingArray appendString:string];
     }
     _textView.text = _stingArray;
+=======
+- (IBAction)startLocation:(id)sender {
+}
+
+- (IBAction)stopLocation:(id)sender {
+>>>>>>> 877f20241894dec5fe20e72d98de787265c76915
 }
 @end
