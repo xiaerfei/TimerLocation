@@ -125,6 +125,8 @@
 - (void)startLocation
 {
     if (_shouldStartMonitoringSignificantLocation) {
+        _loactionManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        _loactionManager.activityType = CLActivityTypeOtherNavigation;
         [_loactionManager startMonitoringSignificantLocationChanges];
     } else {
         [_loactionManager startUpdatingLocation];
@@ -174,8 +176,8 @@
         // TODO: 上传数据
         NSDictionary *dic = @{[self getCurrentTime]:@{@"longitude":@(coordinate.longitude),
                                                       @"latitude":@(coordinate.latitude),
-                                                      @"isAfterResume":@(_isAfterResume),
-                                                      @"isBackgroundFetch":@(_isBackgroundFetch),
+                                                      @"isAfterResume":_isAfterResume?@"YES":@"NO",
+                                                      @"isBackgroundFetch":_isBackgroundFetch?@"YES":@"NO",
                                                       @"appstate":_appstate}};
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *docPath = [paths lastObject];
